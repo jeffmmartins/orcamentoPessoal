@@ -1,0 +1,64 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script src="js/app.js"></script>
+    <title>Orçamento Pessoal</title>
+  </head>
+  <body>
+    <header>
+      <div>
+        <img src="img/logo.png" alt="logo" />
+      </div>
+      <ul id="lista">
+        <li>
+          <a href="">Cadastro</a>
+        </li>
+        <li>
+          <a href="">Consulta</a>
+        </li>
+      </ul>
+    </header>
+
+    <main>
+      <div id="container">
+        <h1>Registro de nova despesa</h1>
+        <form action="">
+          <select id="ano">
+            <option value="">Ano</option>
+            <option value="2024">2024</option>
+          </select>
+          <select id="mes">
+            <option value="">Mês</option>
+            <option value="1">Janeiro</option>
+            <option value="2">Fevereiro</option>
+            <option value="3">Março</option>
+            <option value="4">Abril</option>
+            <option value="5">Maio</option>
+            <option value="6">Junho</option>
+            <option value="7">Julho</option>
+            <option value="8">Agosto</option>
+            <option value="9">Setembro</option>
+            <option value="10">Outubro</option>
+            <option value="11">Novembro</option>
+            <option value="12">Dezembro</option>
+          </select>
+          <input type="text" id="dia" placeholder="Dia">
+          <select name="" id="tipo">
+            <option value="">Tipo</option>
+            <option value="1">Alimentação</option>
+            <option value="2">Educação</option>
+            <option value="3">Lazer</option>
+            <option value="4">Saúde</option>
+            <option value="5">Transporte</option>
+          </select>
+          <input type="text" id="descricao" placeholder="Descrição">
+          <input type="text" id="valor" placeholder="Valor">
+          <button onclick="cadastrarDespesa()">Adicionar</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
