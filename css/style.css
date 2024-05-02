@@ -50,6 +50,16 @@ main {
     height: 198px;
 }
 
+#tabela {
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#informacoes th {
+    padding-right: 100px;
+}
 
 
 
