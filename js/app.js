@@ -88,7 +88,7 @@ class Despesa {
   }
   
   const carregarListaDespesa = () => {
-    //let despesas = Array()
+    let despesas = Array()
     despesas = bd.recuperarTodosRegistros();
     //selecionando o elemento tbocy da tabela
     let listaDespesas = document.getElementById('listaDespesa')
@@ -104,5 +104,8 @@ class Despesa {
 
     // percorrer o array despesas, listando cada array de forma dinamica
     
+    despesas.forEach(function(d) {
+      console.log(d)
+    });
   };
   

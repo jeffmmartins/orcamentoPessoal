@@ -46,8 +46,9 @@ main {
 }
 
 #container {
-    width: 720px;
+    width: 720px; 
     height: 198px;
+    border: 1px solid red;
 }
 
 #tabela {
@@ -61,5 +62,24 @@ main {
     padding-right: 100px;
 }
 
+#tipo {
+    width: 168;
+    height: 18;
+}
+
+#mes {
+    width: 168;
+    height: 18;
+}
+
+#ano {
+    width: 168;
+    height: 18;
+}
+
+#dia {
+    width: 168;
+    height: 18;
+}
 
 
