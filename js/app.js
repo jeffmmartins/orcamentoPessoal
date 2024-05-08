@@ -29,20 +29,22 @@ class Despesa {
   
     getProximoId() {
       let proximoId = localStorage.getItem("id");
+      console.log(proximoId)
       return parseInt(proximoId) + 1;
     }
   
     gravar(d) {
-      let id = this.getProximoId();
+      let id = this.getProximoId(); // utilizado o this porque o metodo faz parte do proprio objeto em questao 
       localStorage.setItem(id, JSON.stringify(d));
       localStorage.setItem("id", id);
     }
   
     recuperarTodosRegistros() {
-      let id = localStorage.getItem("id");
-  
+
       //array de despesa
       let despesas = Array()
+
+      let id = localStorage.getItem("id");
   
       // Recuperar todas as despesas cadastradas em localStorage
       for (let i = 1; i <= id; i++) {
@@ -87,11 +89,12 @@ class Despesa {
     }
   }
   
-  const carregarListaDespesa = () => {
+    function carregaListaDespesa() {
     let despesas = Array()
     despesas = bd.recuperarTodosRegistros();
-    //selecionando o elemento tbocy da tabela
-    let listaDespesas = document.getElementById('listaDespesa')
+    console.log(despesas)
+    //selecionando o elemento tbody da tabela
+    let listaDespesas = document.getElementById('listaDespesas')
     /*
     <tr> 
             <!--Colunas de uma tabela -->
@@ -103,9 +106,15 @@ class Despesa {
      */
 
     // percorrer o array despesas, listando cada array de forma dinamica
+    despesas.forEach((d) => {
+      // criando a linha (tr), esse metodo é a inserção de linhas
+      let linha =  listaDespesas.insertRow()
+      // criar colunas (td)
+      linha.insertCell(0).innerHTML = `${d.dia}/${d.mes}/${d.ano}`
+      linha.insertCell(1).innerHTML = d.tipo
+      linha.insertCell(2).innerHTML = `${d.descriçao}`
+      linha.insertCell(3).innerHTML = `${d.valor}`
+    })
     
-    despesas.forEach(function(d) {
-      console.log(d)
-    });
   };
   
