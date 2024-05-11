@@ -30,7 +30,7 @@ class Despesa {
     getProximoId() {
       let proximoId = localStorage.getItem("id");
       console.log(proximoId)
-      return parseInt(proximoId) + 1;
+      return parseInt(proximoId) + 1; //convertendo uma string em um numero 
     }
   
     gravar(d) {
@@ -82,7 +82,7 @@ class Despesa {
   
     // falta fazer o modal
     if (despesa.validarDados()) {
-      bd.gravar(despesa); // chamando o obhjeto bd e na sequencia executando o metodo gravar
+      bd.gravar(despesa); // chamando o objeto bd e na sequencia executando o metodo gravar
       alert("Registro cadastrado com sucesso");
     } else {
       alert("Erro");
@@ -111,6 +111,21 @@ class Despesa {
       let linha =  listaDespesas.insertRow()
       // criar colunas (td)
       linha.insertCell(0).innerHTML = `${d.dia}/${d.mes}/${d.ano}`
+
+      //ajustar o tipo
+      switch(d.tipo) {
+        case '1': d.tipo = 'Alimentação'
+        break
+        case '2': d.tipo = 'Educação'
+        break
+        case '3': d.tipo = 'Lazer'
+        break
+        case '4': d.tipo = 'Saúde'
+        break
+        case '5': d.tipo = 'Transporte'
+        break
+      }
+
       linha.insertCell(1).innerHTML = d.tipo
       linha.insertCell(2).innerHTML = `${d.descriçao}`
       linha.insertCell(3).innerHTML = `${d.valor}`
